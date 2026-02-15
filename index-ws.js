@@ -84,5 +84,7 @@ function shutdownDB(){
     getCounts();
     console.log("Closing DataBase");
 
-    db.close();
+    db.close(() => {
+        process.exit(0);
+    });
 }
